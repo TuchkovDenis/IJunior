@@ -6,51 +6,31 @@ namespace IJunior
     {
         static void Main(string[] args)
         {
-            string name;
-            int number;
+            int minutesInHours = 60;
+            int minutesInDays = 1440;
+            int hoursInDays = 24;
+
             int minute;
             int hour;
             int day;
 
             int timeOfReception = 10;
-            int timeout;
 
-            Console.Write("Добро пожаловать в <Поликлинику из Ада>. Введите свое имя: ");
-            name = Console.ReadLine();
+            int numberOfPatients;
+
+            int timeout;
 
             Console.Write("Наша поликлиника особенная. Вы можете сами выбирать количество пациентов перед вами." +
                 "\nВведите сколько перед вами будет клиентов: ");
-            number = Convert.ToInt32(Console.ReadLine());
+            numberOfPatients = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
 
-            if (number < 0)
-                Console.WriteLine("Извините. Неправильное колличество пациентов.");
-            else
-            {
-                timeout = number * timeOfReception;
-
-                if (timeout == 0)
-                    Console.WriteLine($"Ваша очередь. Заходите.");
-                else if (timeout < 60)
-                {
-                    minute = timeout;
-                    Console.WriteLine($"{name}, ваше время ожидание составит: {minute} минут.");
-                }
-                else if (timeout < 1440)
-                {
-                    hour = timeout / 60;
-                    minute = timeout % 60;
-                    Console.WriteLine($"{name}, ваше время ожидания составит: {hour} часов и {minute} минут.");
-                }
-                else
-                {
-                    day = timeout / 1440;
-                    hour = timeout / 60 - day * 24;
-                    minute = timeout - hour * 60 - day * 1440;
-                    Console.WriteLine($"{name}, ваше время ожидания составит: {day} дней, {hour} часов и {minute} минут.");
-                }
-                Console.ReadKey();
-            }
+            timeout = numberOfPatients * timeOfReception;
+            day = timeout / minutesInDays;
+            hour = timeout / minutesInHours - day * hoursInDays;
+            minute = timeout - hour * minutesInHours - day * minutesInDays;
+            Console.WriteLine($"Ваше время ожидания составит: {day} дней, {hour} часов и {minute} минут.");
+            Console.ReadKey();
         }
     }
 }
