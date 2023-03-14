@@ -1,0 +1,26 @@
+using System;
+
+namespace IJunior
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Скажи сколько ты хочешь положить себе в карман серебряников: ");
+            int money = Convert.ToInt32(Console.ReadLine());
+
+            int price = 10;
+
+            Console.WriteLine($"\nДобро пожаловать в мою таверну. У нас в продаже есть Кристалы за {price} серебряников. " +
+                $"Напиши сколько ты хотел бы купить. Но не пытайся меня обмануть, я хорошо умею считать. ");
+
+            Console.Write("\nВведите желаемое количество Кристалов: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            money -= price * number;
+
+            Console.WriteLine("\nСпасибо за покупку! Хорошей дороги.");
+            Console.WriteLine($"\nТы купил: {number} кристалов;\nУ тебя осталось: {money} серебряников.");
+            Console.ReadKey();
+        }
+    }
+}
