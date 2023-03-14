@@ -6,15 +6,14 @@ namespace IJunior
     {
         static void Main(string[] args)
         {
-            int x = 10;
-            int y = 34;
-            Console.WriteLine($"{x} {y}");
-
-            int newX = y;
-            int newY = x;
-            x = newX;
-            y = newY;
-            Console.WriteLine($"{x} {y}");
+            string name = "Tuchkov";
+            string surname = "Denis";
+            Console.WriteLine($"{name} {surname}");
+            string change;
+            change = name;
+            name = surname;
+            surname = change;
+            Console.WriteLine($"{name} {surname}");
             Console.ReadKey();
         }
     }
