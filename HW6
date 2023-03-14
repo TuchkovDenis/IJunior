@@ -1,0 +1,18 @@
+using System;
+
+namespace IJunior
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int paintings = 52;
+            int maxPaintingsInRow = 3;
+            int numberRows = paintings / maxPaintingsInRow;
+            int surplusPaintings = paintings % maxPaintingsInRow;
+
+            Console.WriteLine($"Всего рядов из картин: {numberRows}\nКартин сверх меры: {surplusPaintings}");
+            Console.ReadKey();
+        }
+    }
+}
