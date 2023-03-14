@@ -1,0 +1,25 @@
+using System;
+
+namespace IJunior
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = "Denis";
+            byte age = 22;
+            float weight = 78.4f;
+            double height = 184.4;
+            bool isAccess = true;
+            char space = ' ';
+            sbyte programmingEXP = 0;
+            long englishLevel = -9999999;
+            int iq = (int)programmingEXP / (int)englishLevel + 1;
+            ushort desiredSalary = 65535;
+
+            Console.WriteLine($"Ваше имя: {name}\nВаш возраст: {age}\nВаш вес: {weight}\nВаш рост: {height}\nДоступ к обучению: {isAccess}\n" +
+                $"{space}\nОпыт в програмировании: {programmingEXP}\nУровень английского: {englishLevel}\nВаш IQ: {iq}\nЖелаемая ЗП: {desiredSalary}");
+            Console.ReadKey();
+        }
+    }
+}
