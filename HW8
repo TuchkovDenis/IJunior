@@ -6,9 +6,9 @@ namespace IJunior
     {
         static void Main(string[] args)
         {
-            int minutesInHours = 60;
-            int minutesInDays = 1440;
-            int hoursInDays = 24;
+            int minutesInHour = 60;
+            int minutesInDay = 1440;
+            int hoursInDay = 24;
 
             int minute;
             int hour;
