@@ -1,0 +1,56 @@
+using System;
+
+namespace IJunior
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string name;
+            int number;
+            int minute;
+            int hour;
+            int day;
+
+            int timeOfReception = 10;
+            int timeout;
+
+            Console.Write("Добро пожаловать в <Поликлинику из Ада>. Введите свое имя: ");
+            name = Console.ReadLine();
+
+            Console.Write("Наша поликлиника особенная. Вы можете сами выбирать количество пациентов перед вами." +
+                "\nВведите сколько перед вами будет клиентов: ");
+            number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+
+            if (number < 0)
+                Console.WriteLine("Извините. Неправильное колличество пациентов.");
+            else
+            {
+                timeout = number * timeOfReception;
+
+                if (timeout == 0)
+                    Console.WriteLine($"Ваша очередь. Заходите.");
+                else if (timeout < 60)
+                {
+                    minute = timeout;
+                    Console.WriteLine($"{name}, ваше время ожидание составит: {minute} минут.");
+                }
+                else if (timeout < 1440)
+                {
+                    hour = timeout / 60;
+                    minute = timeout % 60;
+                    Console.WriteLine($"{name}, ваше время ожидания составит: {hour} часов и {minute} минут.");
+                }
+                else
+                {
+                    day = timeout / 1440;
+                    hour = timeout / 60 - day * 24;
+                    minute = timeout - hour * 60 - day * 1440;
+                    Console.WriteLine($"{name}, ваше время ожидания составит: {day} дней, {hour} часов и {minute} минут.");
+                }
+                Console.ReadKey();
+            }
+        }
+    }
+}
