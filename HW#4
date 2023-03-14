@@ -1,0 +1,22 @@
+using System;
+
+namespace IJunior
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Привет! Добро пожаловать на Бесплатный курс по C# от Романа Сакутина. Рассажи мне как тебя зовут?");
+            string name = Console.ReadLine();
+            Console.Write("\nОтлично,продолжим. Введи свой возраст: ");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nАга, понятно. Теперь для лучшего понимания мне нужен твой знак зодиака: ");
+            string zodiacSign = Console.ReadLine();
+            Console.Write("\nИ последнее. Напиши где ты работаешь: ");
+            string plaseOfWork = Console.ReadLine();
+
+            Console.WriteLine($"\nРезюмируем.\nТебя зовут: {name};\nТвой возраст: {age} года;\nТвой знак зодиака: {zodiacSign};\nИ работаешь ты в {plaseOfWork}");
+            Console.ReadKey();
+        }
+    }
+}
